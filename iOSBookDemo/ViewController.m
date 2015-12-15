@@ -32,6 +32,8 @@
     NSLog(@"YES");
     
     NSLog(@"ok");
+    
+    NSLog(@"test");
 }
 
 - (IBAction)doWork:(UIButton *)sender {
