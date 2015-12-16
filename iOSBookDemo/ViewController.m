@@ -28,32 +28,52 @@
     
     sillyBlock();
     NSLog(@"a = = %d",a);
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
     
-    NSLog(@"YES");
-    
-    NSLog(@"ok");
-    
-    NSLog(@"test");
+    NSLog(@"%@",[NSUserDefaults standardUserDefaults]);
 }
 
 - (IBAction)doWork:(UIButton *)sender {
-    NSDate *statTime = [NSDate date];
-    NSLog(@"%@",statTime);
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_async(queue, ^{
-        NSLog(@"jjj");
+//    NSDate *statTime = [NSDate date];
+//    NSLog(@"%@",statTime);
+//    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+//    dispatch_async(queue, ^{
+//        NSLog(@"jjj");
+//        [NSThread sleepForTimeInterval:3];//挂起3秒，不能执行其他操作
+//        NSLog(@"kkk");
+//        [NSThread sleepForTimeInterval:2];
+//        NSLog(@"lll");
+//        
+//        NSDate *statTime = [NSDate date];
+//        NSLog(@"%@",statTime);
+//
+//    });
+    
+    //并行执行
+    __block int k = 1;
+    dispatch_group_t group = dispatch_group_create();
+    dispatch_group_async(group, dispatch_get_global_queue(0,0), ^{
+        // 并行执行的线程一
         [NSThread sleepForTimeInterval:3];//挂起3秒，不能执行其他操作
         NSLog(@"kkk");
-        [NSThread sleepForTimeInterval:2];
-        NSLog(@"lll");
-        
-        NSDate *statTime = [NSDate date];
-        NSLog(@"%@",statTime);
+        NSLog(@"%d",k);
+        int b = k;
+        NSLog(@"b=%d",b);
+        b = 2;
+        NSLog(@"k = %d",k);
+        NSLog(@"b = %d",b);
 
     });
-    
-    
-    
+    dispatch_group_async(group, dispatch_get_global_queue(0,0), ^{
+        // 并行执行的线程二
+        [NSThread sleepForTimeInterval:2];
+        NSLog(@"lll");
+
+    });
+    dispatch_group_notify(group, dispatch_get_global_queue(0,0), ^{
+        // 汇总结果
+        NSLog(@"%d",k);
+    });
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
