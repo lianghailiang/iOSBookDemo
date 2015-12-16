@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import <AFNetworking.h>
+#import <YYKit.h>
 
 @interface ViewController ()
 
@@ -31,6 +33,13 @@
     NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
     
     NSLog(@"%@",[NSUserDefaults standardUserDefaults]);
+    
+    YYTimer *timer = [YYTimer timerWithTimeInterval:2 target:self selector:@selector(kkk) repeats:YES];
+    [timer fire];
+}
+
+- (void)kkk{
+    NSLog(@"YYTimer");
 }
 
 - (IBAction)doWork:(UIButton *)sender {

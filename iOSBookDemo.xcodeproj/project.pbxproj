@@ -15,6 +15,7 @@
 		4E1C9CE71C1FBA9F00731367 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E1C9CE51C1FBA9F00731367 /* LaunchScreen.storyboard */; };
 		4E1C9CF21C1FBA9F00731367 /* iOSBookDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1C9CF11C1FBA9F00731367 /* iOSBookDemoTests.m */; };
 		4E1C9CFD1C1FBA9F00731367 /* iOSBookDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1C9CFC1C1FBA9F00731367 /* iOSBookDemoUITests.m */; };
+		B499E118009F5CB2AC4AB46B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 900344817DC61178483E68E3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,9 @@
 		4E1C9CF81C1FBA9F00731367 /* iOSBookDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSBookDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E1C9CFC1C1FBA9F00731367 /* iOSBookDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSBookDemoUITests.m; sourceTree = "<group>"; };
 		4E1C9CFE1C1FBA9F00731367 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CC78B69625BFD44C4A7AAC8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		705EE33412416A11CDCAA9D1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		900344817DC61178483E68E3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B499E118009F5CB2AC4AB46B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1432CF8C9836627D20BAA594 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				900344817DC61178483E68E3 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4D8C41B691B4518E28D2C88B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				705EE33412416A11CDCAA9D1 /* Pods.debug.xcconfig */,
+				5CC78B69625BFD44C4A7AAC8 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		4E1C9CCB1C1FBA9F00731367 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +107,8 @@
 				4E1C9CF01C1FBA9F00731367 /* iOSBookDemoTests */,
 				4E1C9CFB1C1FBA9F00731367 /* iOSBookDemoUITests */,
 				4E1C9CD51C1FBA9F00731367 /* Products */,
+				4D8C41B691B4518E28D2C88B /* Pods */,
+				1432CF8C9836627D20BAA594 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,9 +171,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4E1C9D011C1FBA9F00731367 /* Build configuration list for PBXNativeTarget "iOSBookDemo" */;
 			buildPhases = (
+				A53513F23932484A0E0B2F35 /* Check Pods Manifest.lock */,
 				4E1C9CD01C1FBA9F00731367 /* Sources */,
 				4E1C9CD11C1FBA9F00731367 /* Frameworks */,
 				4E1C9CD21C1FBA9F00731367 /* Resources */,
+				C75976BB306457D186A33359 /* Embed Pods Frameworks */,
+				D1956B69E9B6DDC9F87B287F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -264,6 +291,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A53513F23932484A0E0B2F35 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C75976BB306457D186A33359 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1956B69E9B6DDC9F87B287F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4E1C9CD01C1FBA9F00731367 /* Sources */ = {
@@ -409,22 +484,24 @@
 		};
 		4E1C9D021C1FBA9F00731367 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 705EE33412416A11CDCAA9D1 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iOSBookDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jinvovo.iOSBookDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = "-.iOSBookDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		4E1C9D031C1FBA9F00731367 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CC78B69625BFD44C4A7AAC8 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iOSBookDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jinvovo.iOSBookDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = "-.iOSBookDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -496,6 +573,7 @@
 				4E1C9D031C1FBA9F00731367 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4E1C9D041C1FBA9F00731367 /* Build configuration list for PBXNativeTarget "iOSBookDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +582,7 @@
 				4E1C9D061C1FBA9F00731367 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4E1C9D071C1FBA9F00731367 /* Build configuration list for PBXNativeTarget "iOSBookDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +591,7 @@
 				4E1C9D091C1FBA9F00731367 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
