@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4E1C9CD91C1FBA9F00731367 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1C9CD81C1FBA9F00731367 /* main.m */; };
 		4E1C9CDC1C1FBA9F00731367 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1C9CDB1C1FBA9F00731367 /* AppDelegate.m */; };
-		4E1C9CDF1C1FBA9F00731367 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1C9CDE1C1FBA9F00731367 /* ViewController.m */; };
+		4E1C9CDF1C1FBA9F00731367 /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1C9CDE1C1FBA9F00731367 /* OneViewController.m */; };
 		4E1C9CE41C1FBA9F00731367 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E1C9CE31C1FBA9F00731367 /* Assets.xcassets */; };
 		4E1C9CE71C1FBA9F00731367 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E1C9CE51C1FBA9F00731367 /* LaunchScreen.storyboard */; };
 		4E1C9CF21C1FBA9F00731367 /* iOSBookDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1C9CF11C1FBA9F00731367 /* iOSBookDemoTests.m */; };
@@ -17,10 +17,8 @@
 		4E51051D1C224C2F00959B4B /* FirstTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E51051C1C224C2F00959B4B /* FirstTableViewController.m */; };
 		4E5105201C224C4F00959B4B /* FirstTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E51051F1C224C4F00959B4B /* FirstTableViewCell.m */; };
 		4E5105291C22B3E400959B4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E5105281C22B3E400959B4B /* Main.storyboard */; };
+		4E5A34C61C3141DB003DCE6F /* IssueAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5A34C51C3141DB003DCE6F /* IssueAnimation.m */; };
 		4E5CD0F31C28F00900717C8B /* TwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5CD0F21C28F00900717C8B /* TwoViewController.m */; };
-		4E5CD0F71C28F29E00717C8B /* 1706442046308353.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4E5CD0F41C28F29E00717C8B /* 1706442046308353.jpg */; };
-		4E5CD0F81C28F29E00717C8B /* 1706442046308354.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4E5CD0F51C28F29E00717C8B /* 1706442046308354.jpg */; };
-		4E5CD0F91C28F29E00717C8B /* 1706442046308355.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4E5CD0F61C28F29E00717C8B /* 1706442046308355.jpg */; };
 		B499E118009F5CB2AC4AB46B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 900344817DC61178483E68E3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -46,8 +44,8 @@
 		4E1C9CD81C1FBA9F00731367 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4E1C9CDA1C1FBA9F00731367 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4E1C9CDB1C1FBA9F00731367 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4E1C9CDD1C1FBA9F00731367 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4E1C9CDE1C1FBA9F00731367 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4E1C9CDD1C1FBA9F00731367 /* OneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OneViewController.h; sourceTree = "<group>"; };
+		4E1C9CDE1C1FBA9F00731367 /* OneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
 		4E1C9CE31C1FBA9F00731367 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E1C9CE61C1FBA9F00731367 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E1C9CE81C1FBA9F00731367 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,11 +60,10 @@
 		4E51051E1C224C4F00959B4B /* FirstTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstTableViewCell.h; sourceTree = "<group>"; };
 		4E51051F1C224C4F00959B4B /* FirstTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstTableViewCell.m; sourceTree = "<group>"; };
 		4E5105281C22B3E400959B4B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		4E5A34C41C3141DB003DCE6F /* IssueAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueAnimation.h; sourceTree = "<group>"; };
+		4E5A34C51C3141DB003DCE6F /* IssueAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueAnimation.m; sourceTree = "<group>"; };
 		4E5CD0F11C28F00900717C8B /* TwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoViewController.h; sourceTree = "<group>"; };
 		4E5CD0F21C28F00900717C8B /* TwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoViewController.m; sourceTree = "<group>"; };
-		4E5CD0F41C28F29E00717C8B /* 1706442046308353.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1706442046308353.jpg; sourceTree = "<group>"; };
-		4E5CD0F51C28F29E00717C8B /* 1706442046308354.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1706442046308354.jpg; sourceTree = "<group>"; };
-		4E5CD0F61C28F29E00717C8B /* 1706442046308355.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1706442046308355.jpg; sourceTree = "<group>"; };
 		5CC78B69625BFD44C4A7AAC8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		705EE33412416A11CDCAA9D1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		900344817DC61178483E68E3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,15 +137,12 @@
 		4E1C9CD61C1FBA9F00731367 /* iOSBookDemo */ = {
 			isa = PBXGroup;
 			children = (
-				4E5CD0F41C28F29E00717C8B /* 1706442046308353.jpg */,
-				4E5CD0F51C28F29E00717C8B /* 1706442046308354.jpg */,
-				4E5CD0F61C28F29E00717C8B /* 1706442046308355.jpg */,
-				4E1C9CDA1C1FBA9F00731367 /* AppDelegate.h */,
-				4E1C9CDB1C1FBA9F00731367 /* AppDelegate.m */,
-				4E5105281C22B3E400959B4B /* Main.storyboard */,
 				4E5105211C22504B00959B4B /* Controller */,
 				4E5105221C22506400959B4B /* View */,
+				4E1C9CDA1C1FBA9F00731367 /* AppDelegate.h */,
+				4E1C9CDB1C1FBA9F00731367 /* AppDelegate.m */,
 				4E1C9CE31C1FBA9F00731367 /* Assets.xcassets */,
+				4E5105281C22B3E400959B4B /* Main.storyboard */,
 				4E1C9CE51C1FBA9F00731367 /* LaunchScreen.storyboard */,
 				4E1C9CE81C1FBA9F00731367 /* Info.plist */,
 				4E1C9CD71C1FBA9F00731367 /* Supporting Files */,
@@ -185,10 +179,11 @@
 		4E5105211C22504B00959B4B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4E1C9CDD1C1FBA9F00731367 /* ViewController.h */,
-				4E1C9CDE1C1FBA9F00731367 /* ViewController.m */,
 				4E51051B1C224C2F00959B4B /* FirstTableViewController.h */,
 				4E51051C1C224C2F00959B4B /* FirstTableViewController.m */,
+				4E5A34C71C314708003DCE6F /* Issue */,
+				4E1C9CDD1C1FBA9F00731367 /* OneViewController.h */,
+				4E1C9CDE1C1FBA9F00731367 /* OneViewController.m */,
 				4E5CD0F11C28F00900717C8B /* TwoViewController.h */,
 				4E5CD0F21C28F00900717C8B /* TwoViewController.m */,
 			);
@@ -202,6 +197,15 @@
 				4E51051F1C224C4F00959B4B /* FirstTableViewCell.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		4E5A34C71C314708003DCE6F /* Issue */ = {
+			isa = PBXGroup;
+			children = (
+				4E5A34C41C3141DB003DCE6F /* IssueAnimation.h */,
+				4E5A34C51C3141DB003DCE6F /* IssueAnimation.m */,
+			);
+			name = Issue;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,9 +317,6 @@
 				4E5105291C22B3E400959B4B /* Main.storyboard in Resources */,
 				4E1C9CE71C1FBA9F00731367 /* LaunchScreen.storyboard in Resources */,
 				4E1C9CE41C1FBA9F00731367 /* Assets.xcassets in Resources */,
-				4E5CD0F81C28F29E00717C8B /* 1706442046308354.jpg in Resources */,
-				4E5CD0F71C28F29E00717C8B /* 1706442046308353.jpg in Resources */,
-				4E5CD0F91C28F29E00717C8B /* 1706442046308355.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,11 +390,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E51051D1C224C2F00959B4B /* FirstTableViewController.m in Sources */,
-				4E1C9CDF1C1FBA9F00731367 /* ViewController.m in Sources */,
+				4E1C9CDF1C1FBA9F00731367 /* OneViewController.m in Sources */,
 				4E5105201C224C4F00959B4B /* FirstTableViewCell.m in Sources */,
 				4E5CD0F31C28F00900717C8B /* TwoViewController.m in Sources */,
 				4E1C9CDC1C1FBA9F00731367 /* AppDelegate.m in Sources */,
 				4E1C9CD91C1FBA9F00731367 /* main.m in Sources */,
+				4E5A34C61C3141DB003DCE6F /* IssueAnimation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

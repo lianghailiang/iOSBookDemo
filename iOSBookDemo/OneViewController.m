@@ -6,22 +6,28 @@
 //  Copyright © 2015年 jinvovo_ios. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "OneViewController.h"
 #import <AFNetworking.h>
 #import <YYKit.h>
+#import "MBProgressHUD.h"
+#import <pop/POP.h>
+#import "IssueAnimation.h"
 
-@interface ViewController ()
+@interface OneViewController (){
+    UIView *lView;
+    UIView *blurView;
+}
+
+@property (nonatomic ,strong) IssueAnimation *issueAnimation;
 
 @end
 
-@implementation ViewController
-
+@implementation OneViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [UIFont familyNames];//字体库
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *document = paths.firstObject;
+
 
     __block int a  = 0;
     void (^sillyBlock)(void  ) = ^{ a = 47 ;};
@@ -29,17 +35,44 @@
     NSLog(@"a == %d",a);
     
     sillyBlock();
-    NSLog(@"a = = %d",a);
-    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    NSLog(@"a == %d",a);
     
     NSLog(@"%@",[NSUserDefaults standardUserDefaults]);
     
     YYTimer *timer = [YYTimer timerWithTimeInterval:2 target:self selector:@selector(kkk) repeats:YES];
     [timer fire];
+    
+    CGFloat offset = 20.0f;
+    _button.titleEdgeInsets = UIEdgeInsetsMake(0, -_button.imageView.frame.size.width, -_button.imageView.frame.size.height-offset/2, 0);
+    // button.imageEdgeInsets = UIEdgeInsetsMake(-button.titleLabel.frame.size.height-offset/2, 0, 0, -button.titleLabel.frame.size.width);
+    // 由于iOS8中titleLabel的size为0，用上面这样设置有问题，修改一下即可
+    _button.imageEdgeInsets = UIEdgeInsetsMake(-_button.titleLabel.intrinsicContentSize.height-offset/2, 0, 0, -_button.titleLabel.intrinsicContentSize.width);
 }
 
 - (void)kkk{
     NSLog(@"YYTimer");
+}
+
+- (IBAction)d:(id)sender {
+    if (!_issueAnimation) {
+        _issueAnimation = [[IssueAnimation alloc] init];
+    }
+    [_issueAnimation d:nil];
+}
+
+- (void)loadingView{
+    lView = [[UIView alloc] init];
+    [lView setSize:CGSizeMake(100, 100)];
+    [lView setCenter:CGPointMake(self.view.centerX, self.view.centerY)];
+    [lView setBackgroundColor:[UIColor grayColor]];
+    lView.layer.cornerRadius = 8;
+    [self.view addSubview:lView];
+    UIActivityIndicatorView *activity = [[UIActivityIndicatorView alloc] init];
+    [activity setSize:CGSizeMake(40, 40)];
+    [activity setCenterX:lView.height/2];
+    [activity setCenterY:lView.width/2];
+    [activity startAnimating];
+    [lView addSubview:activity];
 }
 
 - (IBAction)doWork:(UIButton *)sender {
@@ -57,6 +90,22 @@
 //        NSLog(@"%@",statTime);
 //
 //    });
+    
+    if (!lView) {
+        [self loadingView];
+    }
+    
+    
+   
+    // 延迟2秒执行：
+    double delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        // code to be executed on the main queue after delay
+        [lView removeFromSuperview];
+        lView = nil;
+    });
+    
     
     //并行执行
     __block int k = 1;
@@ -86,8 +135,6 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    NSLog(@"1111111111111");
-    
     
 }
 

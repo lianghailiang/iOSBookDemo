@@ -15,8 +15,8 @@
 @implementation TwoViewController
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
     if (scrollView.contentOffset.x == scrollView.contentSize.width-scrollView.frame.size.width) {
-        NSLog(@"dkkd");
         [scrollView setContentOffset:CGPointMake(0, 0)];
     }
     
