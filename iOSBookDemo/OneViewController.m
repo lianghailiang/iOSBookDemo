@@ -47,6 +47,13 @@
     // button.imageEdgeInsets = UIEdgeInsetsMake(-button.titleLabel.frame.size.height-offset/2, 0, 0, -button.titleLabel.frame.size.width);
     // 由于iOS8中titleLabel的size为0，用上面这样设置有问题，修改一下即可
     _button.imageEdgeInsets = UIEdgeInsetsMake(-_button.titleLabel.intrinsicContentSize.height-offset/2, 0, 0, -_button.titleLabel.intrinsicContentSize.width);
+    
+    [self auth];
+
+}
+
+- (void)auth{
+    
 }
 
 - (void)kkk{

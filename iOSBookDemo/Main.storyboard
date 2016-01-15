@@ -182,14 +182,25 @@
                                                 <constraint firstAttribute="height" constant="130" id="ehQ-vB-n7Y"/>
                                             </constraints>
                                         </imageView>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mVN-BQ-029">
+                                            <rect key="frame" x="87" y="220" width="97" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="eYn-hw-xwi"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="SDj-M3-bZP" firstAttribute="top" secondItem="p1E-ri-wvN" secondAttribute="top" constant="8" id="OmZ-8l-RIx"/>
                                         <constraint firstItem="SDj-M3-bZP" firstAttribute="leading" secondItem="p1E-ri-wvN" secondAttribute="leading" constant="20" id="P9k-zl-guz"/>
                                         <constraint firstItem="YKC-ok-PCa" firstAttribute="top" secondItem="SDj-M3-bZP" secondAttribute="bottom" constant="8" id="T9u-cA-wcA"/>
                                         <constraint firstAttribute="bottom" secondItem="YKC-ok-PCa" secondAttribute="bottom" constant="8" id="X00-ft-dtq"/>
+                                        <constraint firstAttribute="trailing" secondItem="mVN-BQ-029" secondAttribute="trailing" constant="158" id="cBd-Rb-ZkQ"/>
+                                        <constraint firstAttribute="bottom" secondItem="mVN-BQ-029" secondAttribute="bottom" constant="2" id="cbm-rh-Jwj"/>
                                         <constraint firstItem="YKC-ok-PCa" firstAttribute="leading" secondItem="p1E-ri-wvN" secondAttribute="leading" constant="20" id="fr6-da-7uT"/>
                                         <constraint firstItem="SDj-M3-bZP" firstAttribute="width" secondItem="p1E-ri-wvN" secondAttribute="width" multiplier="1:2" id="rNA-Ga-2gr"/>
+                                        <constraint firstItem="mVN-BQ-029" firstAttribute="leading" secondItem="p1E-ri-wvN" secondAttribute="leading" constant="87" id="s72-pr-VJz"/>
                                         <constraint firstAttribute="trailing" secondItem="YKC-ok-PCa" secondAttribute="trailing" constant="20" id="wmQ-SA-OZ1"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -211,10 +222,10 @@
             </objects>
             <point key="canvasLocation" x="1370" y="222"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Base Navigation-->
         <scene sceneID="5r5-ud-O8P">
             <objects>
-                <navigationController id="yqD-aY-7kN" sceneMemberID="viewController">
+                <navigationController id="yqD-aY-7kN" customClass="BaseNavigation" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NnR-ve-G1x">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

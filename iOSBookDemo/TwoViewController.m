@@ -25,7 +25,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self requestHttpTest];
+}
+
+- (void)requestHttpTest{
+
+    NSURL *URL = [NSURL URLWithString:@"http://echosystem.kibey.com/sound/hot?page=1"];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    
+    [manager GET:URL.absoluteString parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"JSON:%@",responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"ERROR:%@",error);
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {

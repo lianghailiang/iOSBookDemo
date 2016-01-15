@@ -44,6 +44,7 @@
     
     [imageView.layer addAnimation:animation forKey:nil];
     
+    
 }
 - (IBAction)d:(id)sender {
     view = [UIApplication sharedApplication].keyWindow;
@@ -73,15 +74,6 @@
         [img setImage:[UIImage imageNamed:imgName]];
         
         [self rotate360DegreeWithImageView:kView];
-        
-        [UIView animateWithDuration:0.5 animations:^{
-            //            kView.transform = CGAffineTransformMakeRotation(M_PI*0.1);
-            //            [self rotate360DegreeWithImageView:kView];
-        } completion:^(BOOL finished) {
-            //            [UIView animateWithDuration:0.2 animations:^{
-            //                kView.transform = CGAffineTransformMakeRotation(M_PI);
-            //            }];
-        }];
         
         POPSpringAnimation *anim = [POPSpringAnimation animationWithPropertyNamed:kPOPViewCenter];
         CGFloat centerX = kPoint.x - 80 - 140 * sinf(i * M_PI / (4 - 1));

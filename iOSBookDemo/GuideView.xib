@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GuideView">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8t6-Gp-Nhx">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kbp-lE-Enw">
+                            <rect key="frame" x="0.0" y="0.0" width="1800" height="600"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xfR-LD-1gY">
+                                    <rect key="frame" x="600" y="0.0" width="600" height="600"/>
+                                    <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAn-JX-CpN">
+                                    <rect key="frame" x="8" y="8" width="60" height="60"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="8Pg-rf-myh"/>
+                                        <constraint firstAttribute="width" constant="60" id="mkH-v1-gG5"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                    <connections>
+                                        <action selector="ok:" destination="-1" eventType="touchUpInside" id="dSv-Cf-AJw"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="xfR-LD-1gY" firstAttribute="centerY" secondItem="Kbp-lE-Enw" secondAttribute="centerY" id="GCu-KH-ByF"/>
+                                <constraint firstItem="nAn-JX-CpN" firstAttribute="top" secondItem="Kbp-lE-Enw" secondAttribute="top" constant="8" id="ZOW-xM-jx9"/>
+                                <constraint firstItem="nAn-JX-CpN" firstAttribute="leading" secondItem="Kbp-lE-Enw" secondAttribute="leading" constant="8" id="acs-4v-Fw4"/>
+                                <constraint firstItem="xfR-LD-1gY" firstAttribute="centerX" secondItem="Kbp-lE-Enw" secondAttribute="centerX" id="ner-xc-DHU"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Kbp-lE-Enw" firstAttribute="width" secondItem="8t6-Gp-Nhx" secondAttribute="width" multiplier="3:1" id="4kl-As-5kx"/>
+                        <constraint firstItem="Kbp-lE-Enw" firstAttribute="top" secondItem="8t6-Gp-Nhx" secondAttribute="top" id="AxO-uP-T5H"/>
+                        <constraint firstItem="xfR-LD-1gY" firstAttribute="height" secondItem="8t6-Gp-Nhx" secondAttribute="height" id="BuW-dO-zRx"/>
+                        <constraint firstItem="xfR-LD-1gY" firstAttribute="width" secondItem="8t6-Gp-Nhx" secondAttribute="width" id="GJl-5v-cqk"/>
+                        <constraint firstAttribute="bottom" secondItem="Kbp-lE-Enw" secondAttribute="bottom" id="Nn7-iQ-aVe"/>
+                        <constraint firstItem="Kbp-lE-Enw" firstAttribute="leading" secondItem="8t6-Gp-Nhx" secondAttribute="leading" id="adT-3v-CMQ"/>
+                        <constraint firstAttribute="trailing" secondItem="Kbp-lE-Enw" secondAttribute="trailing" id="ecc-Hk-oOC"/>
+                        <constraint firstItem="Kbp-lE-Enw" firstAttribute="height" secondItem="8t6-Gp-Nhx" secondAttribute="height" id="k6b-jb-itE"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="8t6-Gp-Nhx" secondAttribute="bottom" id="d0X-kw-zUr"/>
+                <constraint firstItem="8t6-Gp-Nhx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gxI-mx-nb5"/>
+                <constraint firstItem="8t6-Gp-Nhx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hWJ-fo-hJh"/>
+                <constraint firstAttribute="trailing" secondItem="8t6-Gp-Nhx" secondAttribute="trailing" id="lXv-J8-DD3"/>
+            </constraints>
+            <point key="canvasLocation" x="547" y="379"/>
+        </view>
+    </objects>
+</document>
