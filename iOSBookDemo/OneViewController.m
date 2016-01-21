@@ -17,6 +17,8 @@
     UIView *lView;
     UIView *blurView;
 }
+@property (weak, nonatomic) IBOutlet UIImageView *iii;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *width_k;
 
 @property (nonatomic ,strong) IssueAnimation *issueAnimation;
 
@@ -28,6 +30,8 @@
     // Do any additional setup after loading the view, typically from a nib.
     [UIFont familyNames];//字体库
 
+//    self.iii.hidden = YES;
+    self.width_k.constant = 0;
 
     __block int a  = 0;
     void (^sillyBlock)(void  ) = ^{ a = 47 ;};
