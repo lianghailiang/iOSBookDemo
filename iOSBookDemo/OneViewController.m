@@ -149,5 +149,33 @@
     
 }
 
+-(IBAction)ActionFanzhuan{
+    //获取当前画图的设备上下文
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    //开始准备动画
+    [UIView beginAnimations:nil context:context];
+    //设置动画曲线，翻译不准，见苹果官方文档
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    //设置动画持续时间
+    [UIView setAnimationDuration:1.0];
+    //因为没给viewController类添加成员变量，所以用下面方法得到viewDidLoad添加的子视图
+    UIView *parentView = [self.view viewWithTag:1000];
+    //设置动画效果
+    [UIView setAnimationTransition: UIViewAnimationTransitionFlipFromRight forView:parentView cache:YES];  //从上向下
+    // [UIView setAnimationTransition: UIViewAnimationTransitionCurlUp forView:parentView cache:YES];   //从下向上
+    // [UIView setAnimationTransition: UIViewAnimationTransitionFlipFromLeft forView:parentView cache:YES];  //从左向右
+    // [UIView setAnimationTransition: UIViewAnimationTransitionFlipFromRight forView:parentView cache:YES];//从右向左
+    //设置动画委托
+    [UIView setAnimationDelegate:self];
+    //当动画执行结束，执行animationFinished方法
+    [UIView setAnimationDidStopSelector:@selector(animationFinished:)];
+    //提交动画
+    [UIView commitAnimations];
+}
+
+- (void) animationFinished: (id) sender{
+    NSLog(@"animationFinished !");
+}
+
 
 @end
