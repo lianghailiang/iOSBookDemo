@@ -10,7 +10,5 @@
 
 @interface OneViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIButton *button;
-
 @end
 

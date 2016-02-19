@@ -17,8 +17,6 @@
     UIView *lView;
     UIView *blurView;
 }
-@property (weak, nonatomic) IBOutlet UIImageView *iii;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *width_k;
 
 @property (nonatomic ,strong) IssueAnimation *issueAnimation;
 
@@ -27,43 +25,11 @@
 @implementation OneViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    [UIFont familyNames];//字体库
-
-//    self.iii.hidden = YES;
-    self.width_k.constant = 0;
-
-    __block int a  = 0;
-    void (^sillyBlock)(void  ) = ^{ a = 47 ;};
     
-    NSLog(@"a == %d",a);
-    
-    sillyBlock();
-    NSLog(@"a == %d",a);
-    
-    NSLog(@"%@",[NSUserDefaults standardUserDefaults]);
-    
-    YYTimer *timer = [YYTimer timerWithTimeInterval:2 target:self selector:@selector(kkk) repeats:YES];
-    [timer fire];
-    
-    CGFloat offset = 20.0f;
-    _button.titleEdgeInsets = UIEdgeInsetsMake(0, -_button.imageView.frame.size.width, -_button.imageView.frame.size.height-offset/2, 0);
-    // button.imageEdgeInsets = UIEdgeInsetsMake(-button.titleLabel.frame.size.height-offset/2, 0, 0, -button.titleLabel.frame.size.width);
-    // 由于iOS8中titleLabel的size为0，用上面这样设置有问题，修改一下即可
-    _button.imageEdgeInsets = UIEdgeInsetsMake(-_button.titleLabel.intrinsicContentSize.height-offset/2, 0, 0, -_button.titleLabel.intrinsicContentSize.width);
-    
-    [self auth];
-
-}
-
-- (void)auth{
     
 }
 
-- (void)kkk{
-    NSLog(@"YYTimer");
-}
-
+#pragma mark 发布动画
 - (IBAction)d:(id)sender {
     if (!_issueAnimation) {
         _issueAnimation = [[IssueAnimation alloc] init];
@@ -87,27 +53,11 @@
 }
 
 - (IBAction)doWork:(UIButton *)sender {
-//    NSDate *statTime = [NSDate date];
-//    NSLog(@"%@",statTime);
-//    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-//    dispatch_async(queue, ^{
-//        NSLog(@"jjj");
-//        [NSThread sleepForTimeInterval:3];//挂起3秒，不能执行其他操作
-//        NSLog(@"kkk");
-//        [NSThread sleepForTimeInterval:2];
-//        NSLog(@"lll");
-//        
-//        NSDate *statTime = [NSDate date];
-//        NSLog(@"%@",statTime);
-//
-//    });
     
     if (!lView) {
         [self loadingView];
     }
     
-    
-   
     // 延迟2秒执行：
     double delayInSeconds = 2.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
@@ -144,11 +94,7 @@
         NSLog(@"%d",k);
     });
 }
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    
-}
-
+#pragma mark 翻转
 -(IBAction)ActionFanzhuan{
     //获取当前画图的设备上下文
     CGContextRef context = UIGraphicsGetCurrentContext();
