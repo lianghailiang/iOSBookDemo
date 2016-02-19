@@ -25,15 +25,21 @@
     [popView setFrame:CGRectMake(0, self.view.bottom, self.view.width, self.view.height*0.65)];
     [popView setBackgroundColor:[UIColor lightGrayColor]];
     [[UIApplication sharedApplication].keyWindow addSubview:popView];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
+    [popView addGestureRecognizer:tap];
 }
-- (IBAction)hidden:(UIButton *)sender {
+
+- (void)tapAction:(UIGestureRecognizer *)sender{
     [UIView animateWithDuration:0.3 animations:^{
         [self.view.layer setTransform:CATransform3DIdentity];
         [popView setCenterY:popView.centerY+popView.height];
     }];
     [UIView animateWithDuration:0.3 animations:^{
-        [self.view.layer setTransform:[self firstTransform]];
+        //        [self.view.layer setTransform:[self firstTransform]];
     }];
+}
+
+- (IBAction)hidden:(UIButton *)sender {
 
 }
 
